@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffb6d5">
+<meta name="description" content="هدية عيد ميلاد مميزة لمنة ❤️">
+
+<title>عيد ميلاد منة ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   الإعدادات العامة
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff69a6;
+    --dark-pink: #e84393;
+    --light-pink: #fff0f6;
+    --purple: #a66cff;
+    --text: #5b3450;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #ffe0ed, #f7e8ff);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 25px 15px 45px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pageAppear 0.7s ease;
+}
+
+@keyframes pageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   القلوب المتحركة
+========================= */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear forwards;
+    opacity: 0.7;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   الأزرار
+========================= */
+
+.primary-button {
+    width: 100%;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff69a6, #e84393);
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(232, 67, 147, 0.25);
+    transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(232, 67, 147, 0.35);
+}
+
+.primary-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: none;
+    transform: none;
+}
+
+/* =========================
+   الصفحة الأولى
+========================= */
+
+.main-card {
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 35px 25px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(219, 87, 148, 0.18);
+    backdrop-filter: blur(12px);
+}
+
+.top-decoration {
+    font-size: 35px;
+    margin-bottom: 12px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.12); }
+}
+
+.main-card h1 {
+    font-size: clamp(25px, 6vw, 36px);
+    color: var(--dark-pink);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 28px;
+    color: #90617f;
+}
+
+.percentage-number {
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--dark-pink);
+    margin: 12px 0;
+}
+
+.range-container {
+    padding: 5px 5px 15px;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    background: linear-gradient(to left, #ff69a6, #ffc4dc);
+    outline: none;
+    cursor: pointer;
+    direction: rtl;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: white;
+    border: 5px solid var(--dark-pink);
+    box-shadow: 0 3px 10px rgba(232, 67, 147, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: white;
+    border: 5px solid var(--dark-pink);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #a57a98;
+    margin-top: 10px;
+}
+
+.love-message {
+    background: #fff0f6;
+    border: 1px dashed #ff9dc5;
+    border-radius: 18px;
+    padding: 15px 12px;
+    margin: 18px 0 22px;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 2;
+    color: #c04483;
+}
+
+.small-note {
+    font-size: 12px;
+    color: #aa82a0;
+    margin-top: 18px;
+}
+
+/* =========================
+   صفحة عيد الميلاد
+========================= */
+
+.birthday-page {
+    align-items: flex-start !important;
+}
+
+.birthday-container {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.birthday-heading {
+    font-size: clamp(25px, 5vw, 39px);
+    color: var(--dark-pink);
+    margin: 12px 0 22px;
+}
+
+.date-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff76ad, #f3a0d3, #c4a0ff);
+    border-radius: 28px;
+    padding: 28px 20px;
+    color: white;
+    box-shadow: 0 12px 35px rgba(196, 95, 160, 0.25);
+    margin-bottom: 25px;
+}
+
+.date-card::before,
+.date-card::after {
+    content: "♡";
+    position: absolute;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 90px;
+}
+
+.date-card::before {
+    top: -25px;
+    right: 15px;
+}
+
+.date-card::after {
+    bottom: -40px;
+    left: 15px;
+}
+
+.date-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.birth-date {
+    display: block;
+    font-size: clamp(32px, 8vw, 48px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 8px 0 14px;
+    direction: ltr;
+}
+
+.date-description {
+    font-size: 15px;
+    line-height: 2;
+}
+
+.name-heading {
+    font-size: clamp(25px, 6vw, 37px);
+    font-weight: 900;
+    color: #e84393;
+    margin: 20px 0 12px;
+}
+
+.big-heart {
+    font-size: 65px;
+    display: inline-block;
+    animation: heartbeat 1.4s infinite;
+    filter: drop-shadow(0 5px 12px rgba(232, 67, 147, 0.2));
+}
+
+/* =========================
+   صفحة الهدية
+========================= */
+
+.gift-page {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 25px 15px;
+}
+
+.gift-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 35px 22px;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(232, 67, 147, 0.18);
+    border: 2px solid white;
+}
+
+.gift-title {
+    color: #e84393;
+    font-size: clamp(25px, 6vw, 35px);
+    margin-bottom: 12px;
+}
+
+.gift-description {
+    color: #90617f;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.gift-box {
+    position: relative;
+    width: 180px;
+    height: 160px;
+    margin: 45px auto 35px;
+    animation: giftBounce 2s infinite ease-in-out;
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 160px;
+    height: 110px;
+    background: linear-gradient(135deg, #ff8fbd, #e84393);
+    border-radius: 8px 8px 15px 15px;
+    box-shadow: 0 12px 25px rgba(232, 67, 147, 0.2);
+}
+
+.gift-body::before {
+    content: "";
+    position: absolute;
+    left: 65px;
+    width: 30px;
+    height: 100%;
+    background: #ffe1a8;
+}
+
+.gift-lid {
+    position: absolute;
+    z-index: 2;
+    top: 35px;
+    left: 0;
+    width: 180px;
+    height: 35px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ffadd0, #ff69a6);
+    box-shadow: 0 5px 10px rgba(180, 55, 115, 0.15);
+    transition: transform 0.8s ease;
+}
+
+.gift-lid::before {
+    content: "";
+    position: absolute;
+    left: 75px;
+    width: 30px;
+    height: 100%;
+    background: #ffe1a8;
+}
+
+.gift-bow {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 55px;
+    transition: transform 0.8s ease;
+}
+
+.gift-box.opened {
+    animation: none;
+}
+
+.gift-box.opened .gift-lid {
+    transform: translate(-15px, -65px) rotate(-18deg);
+}
+
+.gift-box.opened .gift-bow {
+    transform: translate(-50%, -75px) rotate(-20deg);
+}
+
+.gift-sparkles {
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    animation: sparkle 1.5s infinite alternate;
+}
+
+.gift-note {
+    color: #aa82a0;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+@keyframes giftBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.55;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+.gift-button {
+    width: 100%;
+    max-width: 320px;
+}
+
+/* =========================
+   صفحة الرسالة
+========================= */
+
+.letter {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 25px;
+    padding: clamp(18px, 4vw, 35px);
+    margin-top: 25px;
+    text-align: right;
+    box-shadow: 0 10px 35px rgba(204, 111, 163, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+}
+
+.letter-top {
+    text-align: center;
+    font-size: clamp(20px, 5vw, 28px);
+    color: var(--dark-pink);
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.arabic-letter {
+    font-size: 16px;
+    line-height: 2.25;
+    color: #63445b;
+    overflow-wrap: anywhere;
+}
+
+.arabic-letter p {
+    margin-bottom: 20px;
+}
+
+.letter-divider {
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: 5px;
+    padding: 20px 0;
+}
+
+.english-letter {
+    direction: ltr;
+    text-align: left;
+    font-size: 15px;
+    line-height: 2;
+    color: #795b75;
+    padding: 20px;
+    background: #fff4f9;
+    border-radius: 18px;
+    border-left: 4px solid #ff9dc5;
+}
+
+.english-letter p {
+    margin-bottom: 16px;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--dark-pink);
+    line-height: 2;
+}
+
+.final-love {
+    text-align: center;
+    font-size: 25px;
+    color: #e84393;
+    font-weight: 900;
+    margin-top: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.back-button {
+    margin-top: 25px;
+    width: auto;
+    min-width: 210px;
+    padding: 13px 25px;
+    background: linear-gradient(135deg, #b18aff, #8d62e8);
+    box-shadow: 0 8px 20px rgba(141, 98, 232, 0.2);
+}
+
+/* =========================
+   الكونفيتي
+========================= */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 999;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   الموبايل
+========================= */
+
+@media (max-width: 600px) {
+    .page {
+        padding: 18px 12px 35px;
+    }
+
+    .main-card {
+        padding: 28px 18px;
+        border-radius: 24px;
+    }
+
+    .main-card h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .percentage-number {
+        font-size: 44px;
+    }
+
+    .date-card {
+        padding: 25px 12px;
+    }
+
+    .arabic-letter {
+        font-size: 15px;
+        line-height: 2.15;
+    }
+
+    .english-letter {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .letter {
+        border-radius: 20px;
+    }
+
+    .gift-card {
+        padding: 30px 16px;
+    }
+
+    .gift-description {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- القلوب المتحركة -->
+<div class="floating-hearts" id="firstHearts"></div>
+<div class="floating-hearts" id="secondHearts" style="display:none;"></div>
+
+<!-- =========================
+     الصفحة الأولى: الحب
+========================= -->
+
+<section class="page active" id="pageOne">
+
+    <main class="main-card">
+
+        <div class="top-decoration">💗</div>
+
+        <h1>بتحبيني قد إيه؟ ❤️</h1>
+
+        <p class="subtitle">
+            عندي سؤال صغير ليكي يا منة...<br>
+            جاوبي بصراحة بقى 😂💗
+        </p>
+
+        <div class="percentage-number" id="percentage">0%</div>
+
+        <div class="range-container">
+
+            <input
+                type="range"
+                id="loveRange"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="نسبة الحب"
+            >
+
+            <div class="range-labels">
+                <span>ولا حاجة 😂</span>
+                <span>كتير أوي ❤️</span>
+            </div>
+
+        </div>
+
+        <div class="love-message" id="loveMessage" aria-live="polite">
+            يلا حرّكي الشريط وشوفي هتوصلي لكام 😂❤️
+        </div>
+
+        <button
+            class="primary-button"
+            id="continueButton"
+            onclick="openBirthday()"
+            disabled
+        >
+            كمّلي المفاجأة 🎁
+        </button>
+
+        <p class="small-note">
+            خليكي صريحة... أنا شايف كل حاجة 😂💕
+        </p>
+
+    </main>
+
+</section>
+
+<!-- =========================
+     الصفحة الثانية: عيد الميلاد
+========================= -->
+
+<section class="page birthday-page" id="pageTwo">
+
+    <main class="birthday-container">
+
+        <h1 class="birthday-heading">
+            ✨ أهم حدث في السنة ✨
+        </h1>
+
+        <section class="date-card">
+
+            <div class="date-title">
+                يوم مميز جدًا في التاريخ 🎂
+            </div>
+
+            <time class="birth-date" datetime="2008-12-02">
+                02 / 12 / 2008
+            </time>
+
+            <p class="date-description">
+                إن أحلى واحدة في العالم اتولدت في اليوم ده ❤️
+            </p>
+
+        </section>
+
+        <div class="big-heart">❤️</div>
+
+        <h2 class="name-heading">
+            منة الله محمد حسين ❤️
+        </h2>
+
+        <p style="line-height:2; color:#9c6487; margin-bottom:20px;">
+            النهارده مش يوم عادي... النهارده يوم ميلاد منة 🎀
+        </p>
+
+        <button
+            class="primary-button"
+            onclick="goToGift()"
+            style="max-width:320px;"
+        >
+            عندك مفاجأة كمان 🎁
+        </button>
+
+    </main>
+
+</section>
+
+<!-- =========================
+     الصفحة الثالثة: الهدية
+========================= -->
+
+<section class="page" id="pageGift">
+
+    <main class="gift-page">
+
+        <div class="gift-card">
+
+            <div class="gift-sparkles">✨ 💗 ✨</div>
+
+            <h1 class="gift-title">
+                استني يا منة! 🎀
+            </h1>
+
+            <p class="gift-description">
+                لسه المفاجأة مخلصتش! 🥹❤️<br>
+                فيه كلام كتير نفسي أقولهولك،<br>
+                وعشان كده عملتلك حاجة مخصوص.<br>
+                جاهزة تكتشفي المفاجأة اللي مستنياكي؟
+            </p>
+
+            <div class="gift-box" id="giftBox">
+
+                <div class="gift-bow">🎀</div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-body"></div>
+
+            </div>
+
+            <div class="gift-sparkles">💕 🎁 💕</div>
+
+            <button
+                class="primary-button gift-button"
+                id="giftButton"
+                onclick="openGift()"
+            >
+                افتحي مفاجأتك 🎀
+            </button>
+
+            <p class="gift-note">
+                الهدية دي معمولة مخصوص عشانك يا منة ❤️
+            </p>
+
+        </div>
+
+    </main>
+
+</section>
+
+<!-- =========================
+     الصفحة الرابعة: الرسالة
+========================= -->
+
+<section class="page birthday-page" id="pageLetter">
+
+    <main class="birthday-container">
+
+        <h1 class="birthday-heading">
+            💗 رسالة مخصوص ليكي 💗
+        </h1>
+
+        <div class="big-heart">❤️</div>
+
+        <article class="letter">
+
+            <h2 class="letter-top">
+                💌 رسالة مخصوص ليكي يا منة 💌
+            </h2>
+
+            <div class="arabic-letter">
+
+                <p>
+                    كل سنة وانتي طيبة يا منة، يا أحلى وأجمل منة في الدنيا كلها،
+                    وكل سنة وانتي منورة الدنيا بضحكتك الحلوة وروحك الجميلة. 🥹❤️
+                </p>
+
+                <p>
+                    بجد مش عارف أبدأ كلامي منين، بس حبيت أعملك حاجة مختلفة في يوم مميز زي ده،
+                    حاجة تفضل معاكي وتفكرك إن فيه ناس وجودك في حياتهم بيفرق معاهم،
+                    وإنك غالية وليكي مكانة جميلة عندهم. 💗
+                </p>
+
+                <p>
+                    عارفة يا منة، فيه ناس وجودها لوحده بيخلّي الأيام أحلى،
+                    وضحكتها بتقدر تغيّر مود يوم كامل، وانتي من الناس اللي وجودها
+                    بيضيف فرحة للمكان، وعشان كده بتمنى تفضلي دايمًا وسطنا،
+                    وضحكتك منورة وشك، ونفضل نعيش سوا ذكريات حلوة نفتكرها ونضحك عليها مهما كبرنا. 🫂❤️
+                </p>
+
+                <p>
+                    وربنا يخليكي لينا يا منة، وما يحرمناش من وجودك ولا من ضحكتك أبدًا،
+                    وتفضلي جمبنا على طول، ونفضل نشوفك مبسوطة وناجحة وبتحققي كل اللي نفسك فيه. 💗
+                </p>
+
+                <p>
+                    في يوم عيد ميلادك، نفسي أقولك إنك تستاهلي كل الكلام الحلو اللي ممكن يتقال،
+                    وإن مهما كتبتلك كلام، هيفضل فيه حاجات كتير مش عارف أوصفها.
+                    بس أهم حاجة عندي إنك تفرحي بالرسالة دي، وتبتسمي وإنتي بتقريها،
+                    وتحسي إن الهدية دي معمولة مخصوص عشانك. 🎀
+                </p>
+
+                <p>
+                    يا منة، أتمنى السنة الجديدة من عمرك تكون مليانة ضحك وخروجات حلوة
+                    وذكريات جميلة ونجاحات تفرح قلبك، وتفضلي دايمًا بنفس طيبتك وروحك
+                    اللي بتخلي اللي حواليكي يحبوا وجودك.
+                </p>
+
+                <p>
+                    كل سنة وانتي صاحبة أجمل ضحكة، وكل سنة وانتي بتكبري وتحققي أحلامك،
+                    وكل سنة وإحنا بنحتفل بيكي وبوجودك الحلو وسطنا. 🎂❤️
+                </p>
+
+                <p>
+                    وفي الآخر، مهما الكلام طال، هفضل شايف إن أجمل حاجة في عيد ميلادك
+                    هي إننا بنحتفل بيوم ميلادك إنتي، وإن فيه سنة جديدة بتبدأ من عمرك،
+                    ولسه قدامك فيها حاجات كتير حلوة تستاهلي تعيشيها وتفرحي بيها.
+                </p>
+
+                <p>
+                    كل سنة وانتي طيبة يا منة، وعقبال سنين كتير كلها ضحك وفرحة
+                    وذكريات حلوة. بحبك يا منة ❤️🫂
+                </p>
+
+            </div>
+
+            <div class="letter-divider">
+                ✨ 💗 ✨
+            </div>
+
+            <div class="english-letter">
+
+                <p><strong>Happy Birthday, Menna! ❤️🎂</strong></p>
+
+                <p>
+                    Today is a very special day because it's the birthday
+                    of someone who brings happiness and beautiful memories
+                    to the people around her.
+                </p>
+
+                <p>
+                    I hope your new year is full of laughter, wonderful
+                    moments, success, and everything that makes you smile.
+                    Never stop being the beautiful person you are.
+                </p>
+
+                <p>
+                    May we always share happy memories, laugh together,
+                    and celebrate many more beautiful birthdays.
+                </p>
+
+                <p>
+                    You deserve happiness, kindness, and all the beautiful
+                    things life has to offer. I hope this little surprise
+                    makes you smile and reminds you how special you are.
+                </p>
+
+                <p>
+                    Happy Birthday once again, Menna! May your days always
+                    be filled with love, joy, and unforgettable memories. 🎀❤️
+                </p>
+
+            </div>
+
+            <div class="signature">
+                مقدمة من مصطفى إبراهيم ❤️
+            </div>
+
+            <div class="final-love">
+                بحبك ❤️
+            </div>
+
+        </article>
+
+        <button
+            class="primary-button back-button"
+            onclick="backToStart()"
+        >
+            ↩ الرجوع للبداية
+        </button>
+
+        <p style="margin-top:20px; font-size:13px; color:#a57a98;">
+            أتمنى يومك يكون جميل زيك يا منة ❤️
+        </p>
+
+    </main>
+
+</section>
+
+<script>
+/* =========================
+   عناصر الصفحات
+========================= */
+
+const pageOne = document.getElementById("pageOne");
+const pageTwo = document.getElementById("pageTwo");
+const pageGift = document.getElementById("pageGift");
+const pageLetter = document.getElementById("pageLetter");
+
+const loveRange = document.getElementById("loveRange");
+const percentage = document.getElementById("percentage");
+const loveMessage = document.getElementById("loveMessage");
+const continueButton = document.getElementById("continueButton");
+
+const firstHearts = document.getElementById("firstHearts");
+const secondHearts = document.getElementById("secondHearts");
+
+const giftBox = document.getElementById("giftBox");
+const giftButton = document.getElementById("giftButton");
+
+let giftOpening = false;
+
+
+/* =========================
+   تحديث شريط الحب
+========================= */
+
+function updateLoveRange() {
+
+    const value = Number(loveRange.value);
+
+    percentage.textContent = value + "%";
+
+    if (value === 0) {
+
+        loveMessage.textContent =
+            "إيه ده يا منة؟! لسه هنبدأ من الصفر؟ 😂💔";
+
+    } else if (value < 20) {
+
+        loveMessage.textContent =
+            "هو ده حب ولا بتجربي الشريط بس؟ 😂";
+
+    } else if (value < 40) {
+
+        loveMessage.textContent =
+            "طب زوّدي شوية، إحنا لسه في البداية! 😭💗";
+
+    } else if (value < 60) {
+
+        loveMessage.textContent =
+            "أهو بدأنا نتكلم! بس لسه فيه أكتر 😂❤️";
+
+    } else if (value < 80) {
+
+        loveMessage.textContent =
+            "كده الكلام بدأ يعجبني يا منة! 🥹💕";
+
+    } else if (value < 100) {
+
+        loveMessage.textContent =
+            "قربتي خلاص! كمّلي للآخر بقى 😂🎀";
+
+    } else {
+
+        loveMessage.textContent =
+            "100%؟! كده أنا هصدق نفسي بقى 😂❤️🎉";
+
+    }
+
+    continueButton.disabled = value !== 100;
+}
+
+loveRange.addEventListener("input", updateLoveRange);
+
+
+/* =========================
+   إظهار صفحة واحدة فقط
+========================= */
+
+function showPage(page) {
+
+    const pages = [
+        pageOne,
+        pageTwo,
+        pageGift,
+        pageLetter
+    ];
+
+    pages.forEach(item => {
+        item.classList.remove("active");
+    });
+
+    page.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   الانتقال من صفحة الحب
+   إلى صفحة عيد الميلاد
+========================= */
+
+function openBirthday() {
+
+    if (Number(loveRange.value) !== 100) {
+
+        loveMessage.textContent =
+            "لازم توصلي لـ100% الأول يا منة 😂❤️";
+
+        return;
+    }
+
+    showPage(pageTwo);
+
+    firstHearts.style.display = "none";
+    secondHearts.style.display = "block";
+
+    createConfetti();
+}
+
+
+/* =========================
+   الانتقال إلى الهدية
+========================= */
+
+function goToGift() {
+
+    showPage(pageGift);
+
+    createConfetti();
+}
+
+
+/* =========================
+   فتح صندوق الهدية
+========================= */
+
+function openGift() {
+
+    if (giftOpening) return;
+
+    giftOpening = true;
+
+    giftBox.classList.add("opened");
+
+    giftButton.disabled = true;
+    giftButton.textContent = "المفاجأة بتتفتح... ❤️";
+
+    createConfetti();
+
+    setTimeout(() => {
+
+        showPage(pageLetter);
+
+        createConfetti();
+
+        giftBox.classList.remove("opened");
+
+        giftButton.disabled = false;
+        giftButton.textContent = "افتحي مفاجأتك 🎀";
+
+        giftOpening = false;
+
+    }, 1300);
+}
+
+
+/* =========================
+   الرجوع إلى البداية
+========================= */
+
+function backToStart() {
+
+    showPage(pageOne);
+
+    firstHearts.style.display = "block";
+    secondHearts.style.display = "none";
+
+    loveRange.value = 0;
+
+    updateLoveRange();
+}
+
+
+/* =========================
+   القلوب المتحركة
+========================= */
+
+function createFloatingHearts(container) {
+
+    const hearts = [
+        "❤️", "💗", "💕", "💖",
+        "💘", "💝", "💓", "🌸"
+    ];
+
+    function addHeart() {
+
+        const heart = document.createElement("span");
+
+        heart.className = "floating-heart";
+
+        heart.textContent =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (14 + Math.random() * 22) + "px";
+
+        const duration = 7 + Math.random() * 8;
+
+        heart.style.animationDuration = duration + "s";
+
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(addHeart, i * 350);
+    }
+
+    setInterval(addHeart, 900);
+}
+
+
+/* =========================
+   الاحتفال بالكونفيتي
+========================= */
+
+function createConfetti() {
+
+    const symbols = [
+        "💗", "❤️", "💕", "✨",
+        "🎉", "🎀", "💖", "🌸"
+    ];
+
+    for (let i = 0; i < 60; i++) {
+
+        setTimeout(() => {
+
+            const piece = document.createElement("span");
+
+            piece.className = "confetti";
+
+            piece.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            piece.style.left = Math.random() * 100 + "vw";
+
+            piece.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+            const duration = 3 + Math.random() * 4;
+
+            piece.style.animationDuration = duration + "s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(() => {
+                piece.remove();
+            }, duration * 1000);
+
+        }, i * 30);
+    }
+}
+
+
+/* =========================
+   تشغيل التأثيرات
+========================= */
+
+createFloatingHearts(firstHearts);
+createFloatingHearts(secondHearts);
+
+updateLoveRange();
+</script>
+
+</body>
+  </html>
