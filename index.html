@@ -6,257 +6,230 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>إلى منة ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+ font-family:Cairo,sans-serif;
+ min-height:100vh;
+ background:linear-gradient(135deg,#ffe1ed,#f7b6d1,#f4d4f7);
+ color:#873b62;
+ overflow:hidden;
 }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  min-height: 100vh;
-  background: linear-gradient(135deg,#ffe0ed,#f8b6d0,#f4d4f7);
-  overflow-x: hidden;
-  color: #873b62;
+.heart{
+ position:fixed;
+ bottom:-30px;
+ pointer-events:none;
+ animation:floatUp linear forwards;
+ z-index:0;
+ opacity:.65;
 }
 
-.heart {
-  position: fixed;
-  bottom: -30px;
-  color: #ff5c9a;
-  opacity: .5;
-  animation: floatUp linear infinite;
-  pointer-events: none;
-  z-index: 0;
+@keyframes floatUp{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
 
-@keyframes floatUp {
-  to {
-    transform: translateY(-115vh) rotate(360deg);
-    opacity: 0;
-  }
+.screen{
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+ position:relative;
+ z-index:1;
 }
 
-.screen {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 22px;
-  position: relative;
-  z-index: 1;
+.card{
+ width:100%;
+ max-width:390px;
+ padding:35px 25px;
+ background:#ffffffc9;
+ border:1px solid white;
+ border-radius:28px;
+ text-align:center;
+ box-shadow:0 15px 50px #bd648b30;
 }
 
-.card {
-  width: 100%;
-  max-width: 390px;
-  padding: 35px 25px;
-  background: rgba(255,255,255,.75);
-  border: 1px solid white;
-  border-radius: 28px;
-  text-align: center;
-  box-shadow: 0 15px 50px #bd648b30;
-  backdrop-filter: blur(12px);
+.heart-icon{font-size:65px;animation:pulse 1.5s infinite}
+
+@keyframes pulse{
+ 50%{transform:scale(1.15)}
 }
 
-.heart-icon {
-  font-size: 65px;
-  animation: pulse 1.5s infinite;
+h1{font-size:27px;margin:15px 0 8px}
+
+p{font-size:14px;line-height:2}
+
+input{
+ width:100%;
+ margin-top:25px;
+ padding:15px;
+ border:2px solid #f4b4ce;
+ border-radius:14px;
+ text-align:center;
+ font-family:inherit;
+ font-size:20px;
+ letter-spacing:7px;
+ outline:none;
 }
 
-@keyframes pulse {
-  50% { transform: scale(1.15); }
+button{
+ width:100%;
+ margin-top:15px;
+ padding:14px;
+ border:0;
+ border-radius:14px;
+ background:linear-gradient(135deg,#ed609c,#bc62c9);
+ color:white;
+ font-family:inherit;
+ font-size:17px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
-h1 {
-  font-size: 27px;
-  margin: 15px 0 8px;
+#error{color:#d83268;margin-top:12px}
+
+/* الظرف */
+
+#surprise{
+ display:none;
+ min-height:100vh;
+ width:100%;
+ justify-content:center;
+ align-items:center;
+ flex-direction:column;
+ text-align:center;
+ position:relative;
+ z-index:1;
 }
 
-p {
-  line-height: 2;
-  font-size: 14px;
+#surprise h2{font-size:25px;margin-bottom:8px}
+
+.envelope-area{
+ width:310px;
+ max-width:90vw;
+ height:330px;
+ position:relative;
+ margin-top:20px;
+ cursor:pointer;
+ perspective:1000px;
 }
 
-input {
-  width: 100%;
-  margin-top: 25px;
-  padding: 15px;
-  border: 2px solid #f4b4ce;
-  border-radius: 14px;
-  outline: none;
-  text-align: center;
-  font-family: inherit;
-  font-size: 20px;
-  letter-spacing: 7px;
-  color: #a23c70;
-  background: #fffafd;
+.envelope{
+ width:100%;
+ height:190px;
+ position:absolute;
+ bottom:25px;
+ background:#f48bb6;
+ border-radius:8px;
+ box-shadow:0 15px 35px #a7437140;
 }
 
-input:focus {
-  border-color: #e85b99;
+.paper{
+ position:absolute;
+ width:88%;
+ height:270px;
+ left:6%;
+ bottom:35px;
+ background:white;
+ border-radius:8px;
+ padding:7px;
+ overflow:hidden;
+ z-index:2;
+ transition:transform 1.7s ease;
 }
 
-button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 14px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg,#ed609c,#bc62c9);
-  color: white;
-  font-family: inherit;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 7px 18px #d65c9a40;
+.paper img{
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ display:block;
 }
 
-#error {
-  color: #d83268;
-  margin-top: 12px;
-  font-size: 13px;
+.flap{
+ position:absolute;
+ width:0;
+ height:0;
+ top:0;
+ left:0;
+ border-left:155px solid transparent;
+ border-right:155px solid transparent;
+ border-top:115px solid #f9a7c6;
+ transform-origin:top;
+ transition:transform .8s ease;
+ z-index:4;
 }
 
-/* شاشة الظرف */
-
-#surprise {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 30px 15px;
-  min-height: 100vh;
+.front{
+ position:absolute;
+ inset:0;
+ background:#f58eb7;
+ clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+ z-index:3;
 }
 
-#surprise h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
+.seal{
+ position:absolute;
+ z-index:5;
+ top:95px;
+ left:50%;
+ transform:translateX(-50%);
+ width:42px;
+ height:42px;
+ border-radius:50%;
+ background:#c93677;
+ color:white;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-size:23px;
+ transition:opacity .4s;
 }
 
-.envelope-area {
-  width: 310px;
-  max-width: 90vw;
-  height: 330px;
-  position: relative;
-  margin-top: 25px;
-  cursor: pointer;
-  perspective: 1000px;
+.envelope-area.open .flap{
+ transform:rotateX(180deg);
+ z-index:1;
 }
 
-.envelope {
-  width: 100%;
-  height: 190px;
-  position: absolute;
-  bottom: 25px;
-  background: #f48bb6;
-  border-radius: 8px;
-  box-shadow: 0 15px 35px #a7437140;
+.envelope-area.open .paper{
+ transform:translateY(-180px);
+ transition-delay:.5s;
 }
 
-.envelope-back {
-  position: absolute;
-  inset: 0;
-  background: #ec75a5;
-  border-radius: 8px;
+.envelope-area.open .seal{opacity:0}
+
+.hint{margin-top:15px;font-size:14px}
+.footer{margin-top:20px;font-size:13px}
+
+/* عرض الورقة بكامل الشاشة */
+
+#letterFull{
+ position:fixed;
+ inset:0;
+ z-index:20;
+ background:#fff;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ opacity:0;
+ visibility:hidden;
+ transition:opacity 1s ease;
+ padding:0;
 }
 
-.paper {
-  position: absolute;
-  width: 88%;
-  height: 270px;
-  left: 6%;
-  bottom: 35px;
-  background: white;
-  border-radius: 8px;
-  padding: 8px;
-  overflow: hidden;
-  z-index: 2;
-  transform: translateY(0);
-  transition: transform 1.8s ease, opacity .5s;
-  box-shadow: 0 5px 20px #8c315033;
+#letterFull.show{
+ opacity:1;
+ visibility:visible;
 }
 
-.paper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.flap {
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 0;
-  left: 0;
-  border-left: 155px solid transparent;
-  border-right: 155px solid transparent;
-  border-top: 115px solid #f9a7c6;
-  transform-origin: top;
-  transition: transform .8s ease;
-  z-index: 4;
-}
-
-.front {
-  position: absolute;
-  inset: 0;
-  background: #f58eb7;
-  clip-path: polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
-  border-radius: 0 0 8px 8px;
-  z-index: 3;
-}
-
-.seal {
-  position: absolute;
-  z-index: 5;
-  top: 95px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #c93677;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
-  transition: opacity .4s;
-}
-
-.envelope-area.open .flap {
-  transform: rotateX(180deg);
-  z-index: 1;
-}
-
-.envelope-area.open .paper {
-  transform: translateY(-180px);
-  transition-delay: .5s;
-}
-
-.envelope-area.open .seal {
-  opacity: 0;
-}
-
-.hint {
-  margin-top: 15px;
-  color: #a34475;
-  font-size: 14px;
-}
-
-.footer {
-  margin-top: 25px;
-  font-size: 13px;
-  color: #9c4770;
-}
-
-#surprise.opened .paper {
-  transform: translateY(-180px);
+#letterFull img{
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ background:white;
 }
 
 </style>
@@ -266,131 +239,118 @@ button {
 
 <div id="hearts"></div>
 
-<!-- شاشة الباسورد -->
+<!-- تسجيل الدخول -->
 
 <section class="screen" id="login">
-  <div class="card">
-    <div class="heart-icon">💗</div>
+ <div class="card">
+  <div class="heart-icon">💗</div>
+  <h1>أهلاً يا منة ❤️</h1>
+  <p>فيه حاجة صغيرة مستنياكي هنا...</p>
 
-    <h1>أهلاً يا منة ❤️</h1>
+  <input id="password" type="password"
+   placeholder="••••" maxlength="4" inputmode="numeric">
 
-    <p>
-      فيه حاجة صغيرة مستنياكي هنا...
-      <br>
-      بس الأول جاوبي على السؤال 🤭
-    </p>
-
-    <input
-      type="password"
-      id="password"
-      placeholder="••••"
-      maxlength="4"
-      inputmode="numeric"
-    >
-
-    <button onclick="checkPassword()">
-      دخول ❤️
-    </button>
-
-    <div id="error"></div>
-  </div>
+  <button onclick="checkPassword()">دخول ❤️</button>
+  <div id="error"></div>
+ </div>
 </section>
 
-<!-- شاشة المفاجأة -->
+<!-- المفاجأة -->
 
 <section id="surprise">
 
-  <h2>رسالة مخصوص ليكي يا منة 💗</h2>
+ <h2>رسالة مخصوص ليكي يا منة 💗</h2>
+ <p>فيه جواب مستنيكي جوا الظرف...</p>
 
-  <p>فيه جواب مستنيكي جوا الظرف...</p>
+ <div class="envelope-area" id="envelope"
+  onclick="openEnvelope()">
 
-  <div class="envelope-area" id="envelope"
-       onclick="openEnvelope()">
+  <div class="envelope">
+   <div class="paper">
+    <img src="letter.png" alt="جواب منة">
+   </div>
 
-    <div class="envelope">
-      <div class="envelope-back"></div>
-
-      <div class="paper">
-        <!-- صورة الجواب -->
-        <img src="letter.png"
-             alt="رسالة عيد ميلاد منة">
-      </div>
-
-      <div class="front"></div>
-      <div class="flap"></div>
-      <div class="seal">❤️</div>
-    </div>
-
+   <div class="front"></div>
+   <div class="flap"></div>
+   <div class="seal">❤️</div>
   </div>
+ </div>
 
-  <div class="hint" id="hint">
-    اضغطي على الظرف عشان تفتحيه 💌
-  </div>
+ <div class="hint" id="hint">
+  اضغطي على الظرف عشان تفتحيه 💌
+ </div>
 
-  <div class="footer">
-    مقدمة من مصطفى إبراهيم ❤️
-  </div>
-
+ <div class="footer">مقدمة من مصطفى إبراهيم ❤️</div>
 </section>
+
+<!-- الورقة بكامل الشاشة -->
+
+<div id="letterFull">
+ <img src="letter.png" alt="رسالة منة">
+</div>
 
 <script>
 
 // القلوب المتحركة
 
-const hearts = document.getElementById("hearts");
+function createHeart(){
+ const heart=document.createElement("div");
+ heart.className="heart";
+ heart.textContent=["❤️","💕","💗","💖"][
+  Math.floor(Math.random()*4)
+ ];
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(15+Math.random()*20)+"px";
+ heart.style.animationDuration=(5+Math.random()*6)+"s";
+ document.getElementById("hearts").appendChild(heart);
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = ["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
-
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.fontSize = (15 + Math.random()*20) + "px";
-  heart.style.animationDuration = (5 + Math.random()*6) + "s";
-
-  hearts.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 11000);
+ setTimeout(()=>heart.remove(),11000);
 }
 
-setInterval(createHeart, 450);
+setInterval(createHeart,450);
 
-// التحقق من الباسورد
+// الباسورد
 
-function checkPassword() {
-  const pass = document.getElementById("password").value;
-  const error = document.getElementById("error");
+function checkPassword(){
+ const pass=document.getElementById("password").value;
 
-  if(pass === "2008") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("surprise").style.display = "flex";
-  } else {
-    error.textContent = "الباسورد مش صح، حاولي تاني ❤️";
-  }
+ if(pass==="2008"){
+  document.getElementById("login").style.display="none";
+  document.getElementById("surprise").style.display="flex";
+ }else{
+  document.getElementById("error").textContent=
+   "الباسورد مش صح، حاولي تاني ❤️";
+ }
 }
+
+// Enter للدخول
+
+document.getElementById("password")
+.addEventListener("keydown",function(e){
+ if(e.key==="Enter")checkPassword();
+});
 
 // فتح الظرف
 
-let opened = false;
+let opened=false;
 
-function openEnvelope() {
-  if(opened) return;
+function openEnvelope(){
+ if(opened)return;
+ opened=true;
 
-  opened = true;
+ const envelope=document.getElementById("envelope");
 
-  document.getElementById("envelope").classList.add("open");
+ envelope.classList.add("open");
 
-  document.getElementById("hint").textContent =
-    "كل حاجة حلوة تستاهليها يا منة ❤️";
+ document.getElementById("hint").textContent=
+  "كل حاجة حلوة تستاهليها يا منة ❤️";
+
+ // بعد خروج الورقة تظهر بالحجم الكامل
+
+ setTimeout(function(){
+  document.getElementById("letterFull").classList.add("show");
+ },2500);
 }
-
-// السماح بالدخول بزر Enter
-
-document.getElementById("password").addEventListener("keydown", function(e) {
-  if(e.key === "Enter") {
-    checkPassword();
-  }
-});
 
 </script>
 
